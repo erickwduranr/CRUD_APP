@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/usr/src/app
+    environment:
+      - NODE_ENV=development
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
